@@ -144,14 +144,14 @@ print(f"Number: {number:,}")  # prints 'Number: 123,456,789' (formats the number
 text = "  Ayush, Singh!  "
 print(text.lower())  # prints '  ayush, singh!  ' 
 print(text.upper())  # prints '  AYUSH, SINGH!  ' 
-print(text.strip())  # prints 'Ayush, Singh!' strips leading and trailing whitespace from the string
+print(text.strip())  # prints 'Ayush, Singh!' 
 print(text.replace("Ayush", "Hi"))  # prints '  Hi, Singh!
-print(text.title())  # prints '  Ayush, Singh!  ' (capitalizes the first letter of each word)
-print(text.capitalize())  # prints '  ayush, singh!  ' (capitalizes the first letter of the string and makes the rest lowercase)
-print(text.count("a"))  # prints 1 (counts the number of occurrences of 'a' in the string)
-print(text.find("Singh"))  # prints 8 (finds the index of the first occurrence of 'Singh' in the string)
-print(text.split(","))  # prints ['  Ayush', ' Singh!  '] (splits the string into a list of substrings based on the comma delimiter)
-print(text.startswith("  Ayush"))  # prints True (checks if the string starts with '  Ayush')
-print(text.endswith("!  "))  # prints True (checks if the string ends with '!  ')   
+print(text.title())  # prints '  Ayush, Singh!  '
+print(text.capitalize())  # prints '  ayush, singh!  ' 
+print(text.count("a"))  # prints 1 
+print(text.find("Singh"))  # prints 8 
+print(text.split(","))  # prints ['  Ayush', ' Singh!  '] 
+print(text.startswith("  Ayush"))  
 
+print(text.endswith("!  ")) 
 
