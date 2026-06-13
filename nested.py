@@ -28,3 +28,24 @@ print(False or False) # output - False
 
 print(not True)  # output - False
 print(not age>=18)  # output - False
+
+
+# and → sab conditions True honi chahiye.
+# or → koi ek condition True ho to True.
+# not → True ko False aur False ko True bana deta hai.
+# True aur False Python ke Boolean values hain.
+# 1. not   (Highest)
+# 2. and
+# 3. or    (Lowest)
+print(True or False and False) # output - True()
+""" 
+overall precedence
+()
+*, /, //, %
++, -
+<, >, <=, >=, ==, !=
+not
+and
+or
+
+"""
