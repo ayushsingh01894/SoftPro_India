@@ -114,7 +114,7 @@ Gemini (primary) · Groq · Ollama (local) · Hugging Face · Chroma / pgvector 
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repository Structure on pursuing ...........
 
 ```bash
 SoftPro_India/
