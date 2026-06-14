@@ -13,16 +13,16 @@ Skills: len(), truthiness, if/elif/else, f-strings. Focus: ordering branches cor
 
 #solution
 
-tweet = input("Enter your tweet: ")
+# tweet = input("Enter your tweet: ")
 
-length = len(tweet)
+# length = len(tweet)
 
-if not tweet:
-    print("❌ Tweet cannot be empty.")
-elif length <= 280:
-    print(f"✅ Good to post! ({length}/280 chars)")
-else:
-    print(f"❌ Too long! You are {length - 280} characters over the limit.")
+# if not tweet:
+#     print("❌ Tweet cannot be empty.")
+# elif length <= 280:
+#     print(f"✅ Good to post! ({length}/280 chars)")
+# else:
+#     print(f"❌ Too long! You are {length - 280} characters over the limit.")
 
 """
 Exercise 2 — BMI Calculator 🩺
@@ -45,22 +45,20 @@ Skills: float(), **, if/elif/else ordering, f-string formatting. Focus: why the 
 
 #solution
 
-weight = float(input("Enter your weight (kg): "))
-height = float(input("Enter your height (m): "))
+# weight = float(input("Enter your weight (kg): "))
+# height = float(input("Enter your height (m): "))
+# bmi = weight / (height ** 2)
+# if bmi < 18.5:
+#     category = "Underweight"
+# elif bmi < 25:
+#     category = "Normal"
+# elif bmi < 30:
+#     category = "Overweight"
+# else:
+#     category = "Obese"
 
-bmi = weight / (height ** 2)
-
-if bmi < 18.5:
-    category = "Underweight"
-elif bmi < 25:
-    category = "Normal"
-elif bmi < 30:
-    category = "Overweight"
-else:
-    category = "Obese"
-
-print(f"BMI: {bmi:.1f}")
-print(f"Category: {category}")
+# print(f"BMI: {bmi:.1f}")
+# print(f"Category: {category}")
 
 
 """
@@ -77,9 +75,7 @@ Skills: random.choice, in/not in, and/or, string methods, conditionals. Focus: c
 """
 
 import random
-
 player = input("Choose rock, paper, or scissors: ").strip().lower()
-
 if player not in ["rock", "paper", "scissors"]:
     print("Invalid move! Please choose rock, paper, or scissors.")
 else:
