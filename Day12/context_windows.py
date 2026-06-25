@@ -5,12 +5,8 @@ The context window holds prompt tokens + answer tokens together. This script
 uses the rough rule "1 token ~= 4 characters" to show how to budget space and
 leave room for the answer.
 
-Run:
-    python context_budget.py
 """
 
-# A made-up small window so the numbers are easy to read.
-# (Real Gemini models are far larger -- this is just to show the idea.)
 CONTEXT_WINDOW = 1000          # total tokens allowed (prompt + answer)
 ANSWER_BUDGET = 300            # tokens we want to reserve for the model's reply
 

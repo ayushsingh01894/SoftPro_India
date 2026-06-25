@@ -54,20 +54,34 @@ samples = [
     "Antidisestablishmentarianism",
     "namaste, kaise ho aap?",
 ]
-
-print("Text -> Response")
-
-for text in samples:
+def prompt_tokens(test):
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
-            {"role": "user", "content": text}
+            {
+                "role":"user",
+                "content":"Explain what is full form of url"
+            }
         ]
     )
+    return response.usage.prompt_tokens
 
-    print(f"\nInput: {text}")
-    print("Output:", response.choices[0].message.content)
+print("Text -> Response")
+for text in samples:
+    print(f"{prompt_tokens(text)} <--{text}")
 
-    print("Prompt tokens    :", response.usage.prompt_tokens)
-    print("Completion tokens:", response.usage.completion_tokens)
-    print("Total tokens     :", response.usage.total_tokens)
+# print("Text -> Response")
+# for text in samples:
+#     response = client.chat.completions.create(
+#         model="llama-3.3-70b-versatile",
+#         messages=[
+#             {"role": "user", "content": text}
+#         ]
+#     )
+
+#     print(f"\nInput: {text}")
+#     print("Output:", response.choices[0].message.content)
+
+#     print("Prompt tokens    :", response.usage.prompt_tokens)
+#     print("Completion tokens:", response.usage.completion_tokens)
+#     print("Total tokens     :", response.usage.total_tokens)

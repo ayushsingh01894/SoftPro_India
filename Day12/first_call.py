@@ -1,45 +1,3 @@
-"""
-Your first Gemini API call.
-
-Setup:
-    pip install google-generativeai python-dotenv
-    # put GEMINI_API_KEY=... in a .env file (get a free key at aistudio.google.com/apikey)
-Run:
-    python first_call.py
-    
-"""
-"""
-import os
-from dotenv import load_dotenv
-import google.generativeai as genai
-
-load_dotenv()
-
-api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise SystemExit("Set GEMINI_API_KEY in a .env file first (see the README).")
-
-genai.configure(api_key=api_key)
-
-# gemini-2.0-flash: fast and free. (Model names change -- see the README.)
-model = genai.GenerativeModel("gemini-2.0-flash")
-
-response = model.generate_content("Explain what an API is in one simple sentence.")
-
-print("Model's answer:")
-print(response.text)
-
-# The response also carries token usage -- handy for cost/limits later.
-usage = response.usage_metadata
-print()
-print("Prompt tokens    :", usage.prompt_token_count)
-print("Response tokens  :", usage.candidates_token_count)
-print("Total tokens     :", usage.total_token_count)
-
-
-
-"""
-
 import os
 from dotenv import load_dotenv
 from groq import Groq
@@ -55,18 +13,27 @@ client = Groq(api_key=api_key)
 response = client.chat.completions.create(
     model="llama-3.3-70b-versatile",
     messages=[
+        # {
+        #     # #set role means direct role dena when u builind some .
+        #     # "role":"system",
+        #     # #content are use to set a role like ai kaisa anser dega ?
+        #     # "content":"You are a 5 year old kid. who answer everything as a joke"
+        # }
+        
         {
-            "role": "user",
-            "content": "Explain what an API is in one simple sentence."
+            "role":"user",
+            "content":"Explain what is full form of url"
         }
-    ],
-    temperature=0.7,
+    ]
 )
-
-print("Model's answer:")
+print("Model response ")
 print(response.choices[0].message.content)
 
-# Usage information
-print("\nPrompt tokens   :", response.usage.prompt_tokens)
-print("Completion tokens:", response.usage.completion_tokens)
+#usege = response.usages
+print()
+print("\nPrompt tokens   :", response.usage.prompt_tokens) # input tokens 
+print("Completion tokens:", response.usage.completion_tokens) # output tokens
 print("Total tokens    :", response.usage.total_tokens)
+
+
+
