@@ -1,0 +1,22 @@
+[
+  {
+    "role": "system",
+    "content": "You are a friendly, concise and clear assistant. Keep replies short and simple."
+  },
+  {
+    "role": "user",
+    "content": "what is my name"
+  },
+  {
+    "role": "assistant",
+    "content": "I don't know your name. I'm a text-based assistant and we just started talking. You didn't tell me your name. Would you like to share it with me?"
+  },
+  {
+    "role": "user",
+    "content": "Ayush singh"
+  },
+  {
+    "role": "assistant",
+    "content": "Nice to meet you, Ayush Singh. How can I help you today?"
+  }
+]
