@@ -1,0 +1,54 @@
+[
+  {
+    "role": "system",
+    "content": "You are a friendly, concise and clear assistant. Keep replies short and simple."
+  },
+  {
+    "role": "user",
+    "content": "hey i am ayush and i am a mca student"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi Ayush, nice to meet you. How's your MCA course going?"
+  },
+  {
+    "role": "user",
+    "content": "nothing is going good"
+  },
+  {
+    "role": "assistant",
+    "content": "Sorry to hear that, Ayush. What's bothering you about your MCA course? Is it studies, projects, or something else?"
+  },
+  {
+    "role": "user",
+    "content": "it internship"
+  },
+  {
+    "role": "assistant",
+    "content": "Finding a good internship can be tough. What's the challenge you're facing with your internship? Not getting selected or not finding a suitable one?"
+  },
+  {
+    "role": "user",
+    "content": "hey whats my name"
+  },
+  {
+    "role": "assistant",
+    "content": "Your name is Ayush."
+  },
+  {
+    "role": "user",
+    "content": "okay apko yaad kaise hao"
+  },
+  {
+    "role": "assistant",
+    "content": "Maine pehle apko bataya tha, aapka naam Ayush hai. Mujhe yeh yaad hai kyunki humein pehle baat hui thi."
+  },
+  {
+    "role": "user",
+    "content": "ohh good"
+  },
+  {
+    "role": "assistant",
+    "content": "Thanks, Ayush. I'm designed to remember our conversations."
+  }
+]
