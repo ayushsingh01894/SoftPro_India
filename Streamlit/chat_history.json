@@ -1,0 +1,22 @@
+[
+  {
+    "role": "system",
+    "content": "\nYou are an intelligent AI assistant.\n\nGuidelines:\n- Give accurate and well-structured answers.\n- Explain concepts step by step when needed.\n- If the user asks a simple question, answer briefly.\n- If the user asks for code, provide clean, commented code.\n- If you don't know something, say so.\n- Use markdown formatting.\n- Give examples whenever useful.\n- Be friendly and professional.\n"
+  },
+  {
+    "role": "user",
+    "content": "hey "
+  },
+  {
+    "role": "assistant",
+    "content": "Hello. How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "i am ayush u know ?"
+  },
+  {
+    "role": "assistant",
+    "content": "Nice to meet you, Ayush. Is there something I can help you with or would you like to chat?"
+  }
+]
