@@ -1,0 +1,58 @@
+from typing import TypedDict, Annotated
+from operator import add
+from langgraph.graph import StateGraph, START, END, MessagesState
+from langgraph.graph.message import add_messages
+
+class NoReducer(TypedDict):
+    log: list
+
+def step_a(state): return {"log": ["a ran"]}
+def step_b(state): return {"log": ["b ran"]}
+
+b1 = StateGraph(NoReducer)
+b1.add_node("step_a", step_a)
+b1.add_node("step_b", step_b)
+
+b1.add_edge(START, "step_a")
+b1.add_edge("step_a", "step_b")
+b1.add_edge("step_b", END)
+
+print("PART A (no reducer): log =", b1.compile().invoke({"log": []})["log"])
+
+
+class WithReducer(TypedDict):
+    log: Annotated[list, add]
+
+# same nodes, same wiring -- only the state annotation changed
+b2 = StateGraph(WithReducer)
+b2.add_node("step_a", step_a)
+b2.add_node("step_b", step_b)
+
+b2.add_edge(START, "step_a")
+b2.add_edge("step_a", "step_b")
+b2.add_edge("step_b", END)
+
+print("PART B (Annotated[list, add]): log =", b2.compile().invoke({"log": []})["log"])
+
+
+class ChatState(TypedDict):
+    messages: Annotated[list, add_messages]
+
+def user_turn(state):
+    return {"messages": [("human", "What's the capital of France?")]}
+def bot_turn(state):
+    return {"messages": [("ai", "Paris.")]}
+
+b3 = StateGraph(ChatState)
+b3.add_node("user_turn", user_turn)
+b3.add_node("bot_turn", bot_turn)
+b3.add_edge(START, "user_turn")
+b3.add_edge("user_turn", "bot_turn")
+b3.add_edge("bot_turn", END)
+msgs = b3.compile().invoke({"messages": []})["messages"]
+print("PART C (add_messages): history grew to", len(msgs), "messages")
+for m in msgs:
+    # add_messages upgraded our ("human", "...") tuples into Message objects
+    print(f"  {type(m).__name__:10} {m.content}")
+print()
+
