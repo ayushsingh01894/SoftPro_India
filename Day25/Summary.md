@@ -1,15 +1,7 @@
-Bilkul. Tumne Day 25 me **LangChain Agents** ke 6 modules kiye hain. In sabka goal tha **manual tool-calling loop se ReAct Agent tak ka safar samajhna**.
-
----
-
 # Day 25 – LangChain Agents (Complete Notes)
-
 ## Step 1 — Why ReAct Agent?
-
 ### Day 23 me kya kiya tha?
-
 Tumne khud tool-calling loop likha tha.
-
 Flow:
 
 ```text
@@ -34,13 +26,9 @@ Code kuch aisa tha:
 
 ```python
 while True:
-
     ai = model.invoke(messages)
-
     if ai.tool_calls:
-
         run_tool()
-
     else:
         break
 ```
@@ -50,15 +38,11 @@ Ye pura loop tumne khud likha.
 ---
 
 ## Problem
-
 Har project me ye loop dobara likhna padega.
-
 ---
 
 ## LangChain Solution
-
 Sirf ek line
-
 ```python
 agent = create_agent(
     model,
@@ -67,37 +51,24 @@ agent = create_agent(
 ```
 
 Bas.
-
 Ye internally wahi loop bana deta hai.
-
 ---
 
 ## Is loop ka naam
-
 **ReAct**
-
 ```
 Reason
-
 ↓
-
 Act
-
 ↓
-
 Observe
-
 ↓
-
 Reason
-
 ↓
-
 Answer
 ```
 
 ---
-
 # Step 2 — First Agent
 
 Ab humne
@@ -105,9 +76,7 @@ Ab humne
 ```python
 ChatGroq()
 ```
-
 banaya.
-
 Fir
 
 ```python
